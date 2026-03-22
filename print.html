@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body { font-family: Arial; }
+
+@media print {
+  body {
+    width: 80mm;
+    font-size: 11px;
+    margin: 0;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div id="out"></div>
+
+<script>
+const d = JSON.parse(localStorage.getItem("ticket"));
+
+if (!d) {
+  document.getElementById("out").innerHTML = "<h3>No hay datos</h3>";
+} else {
+
+document.getElementById("out").innerHTML = `
+<div style="width:80mm">
+
+<b>DESERET LTDA.</b><br>
+<hr>
+
+ORDEN: ${d.id}<br>
+${d.fecha}<br>
+
+<hr>
+<b>REMITENTE</b><br>
+${d.remitente}<br>
+${d.tel_rem}<br>
+${d.dir_rem}<br>
+
+<hr>
+<b>DESTINATARIO</b><br>
+${d.destinatario}<br>
+${d.tel_des}<br>
+${d.dir_des}<br>
+
+<hr>
+<b>ENVÍO</b><br>
+Tipo envío: ${d.tipo_envio}<br>
+Servicio: ${d.tipo}<br>
+Dist: ${d.distancia} km<br>
+Horario: ${d.horario}<br>
+
+<hr>
+<b>COSTOS</b><br>
+Subtotal: $${d.subtotal}<br>
+IVA: $${d.iva}<br>
+<b>TOTAL: $${d.total}</b><br>
+
+<hr>
+<b>OBS</b><br>
+${d.obs || "-"}
+
+<hr>
+<b>POLÍTICAS</b><br>
+Urgente: ≤90 min<br>
+Express: AM → PM<br>
+Normal: PM → día sig.<br>
+
+Punta AM: 7-9<br>
+Intermedio: 9-14<br>
+Valle: 14-17<br>
+Punta PM: 17-20<br>
+
+<hr>
+Condiciones:<br>
+• Sujeto a tráfico<br>
+• Cliente verifica datos<br>
+• Sin cobertura embalaje<br>
+• Reclamos 24 hrs<br>
+
+<hr>
+Firma:<br><br><br>
+_____________
+
+</div>
+`;
+
+setTimeout(() => window.print(), 500);
+}
+</script>
+
+</body>
+</html>

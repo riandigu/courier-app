@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Orden de Servicio Courier</title>
+</head>
+
+<body>
+
+<h4>ORDEN DE SERVICIO</h4>
+
+<h3>Cliente</h3>
+<input id="id_cliente" placeholder="ID Cliente:"><br><br>
+
+<h4>REMITENTE</h4>
+<input id="remitente" placeholder="Razón Social:"><br>
+<input id="rut_rem" placeholder="Rut:"><br>
+<input id="tel_rem" placeholder="Teléfono:"><br>
+<input id="cel_rem" placeholder="Celular:"><br><br>
+<input id="dir_rem" placeholder="Dirección"><br>
+<input id="com_rem" placeholder="Comuna:"><br>
+<input id="region_rem" placeholder="Región:"><br><br>
+<input id="obs_rem" placeholder="Obs.:"><br><br>
+
+
+<h4>DESTINATARIO</h4>
+<input id="destinatario" placeholder="Razón Social:"><br>
+<input id="rut_des" placeholder="Rut:"><br>
+<input id="tel_des" placeholder="Teléfono:"><br>
+<input id="cel_des" placeholder="Celular:"><br><br>
+<input id="dir_des" placeholder="Dirección"><br>
+<input id="com_des" placeholder="Comuna:"><br>
+<input id="region_des" placeholder="Región:"><br><br>
+<input id="obs_des" placeholder="Obs.:"><br>
+
+
+<h4>DATOS DE RECEPCIÓN</h4>
+<h4>Tipo de Envío:</h4>
+<select id="tipo_envio">
+  <option>VALIJA</option>
+  <option>CAJA</option>
+  <option>OTRO</option>
+</select><br>
+
+<h4>Descripción</h4>
+<input id="vol_des" placeholder="Volumen (cm3):"><br>
+<input id="peso_des" placeholder="Peso (Gr.):"><br>
+<input id="valor_des" placeholder="Valor (cl$):"><br>
+
+<h4>Tipo de Servicio</h4>
+<select id="tipo">
+  <option>URGENTE</option>
+  <option>EXPRESS</option>
+  <option>NORMAL</option><br><br>
+</select><br><br>
+
+<h4>COSTOS LOGÍSTICOS</h4>
+<input id="distancia" type="number" placeholder="Distancia (km)"><br>
+<input id="tiempo" type="number" placeholder="Tiempo: (hrs.)"><br>
+<input id="tag" type="number" placeholder="Valor TAG: (cl$)"><br><br>
+
+<h4>OBS. GENERALES</h4>
+<textarea id="obs" placeholder="Observaciones"></textarea><br><br>
+
+<button onclick="guardar()">Guardar e Imprimir</button>
+<button onclick="descargarCSV()">Descargar CSV</button>
+
+<script src="app.js"></script>
+
+</body>
+</html>
