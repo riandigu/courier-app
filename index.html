@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Orden de Servicio Courier</title>
+</head>
+
+<body>
+
+<h2>Orden de Servicio</h2>
+
+<h3>Cliente</h3>
+<input id="cliente" placeholder="Código Cliente"><br><br>
+
+<h3>Remitente</h3>
+<input id="remitente" placeholder="Nombre"><br>
+<input id="tel_rem" placeholder="Teléfono"><br>
+<input id="dir_rem" placeholder="Dirección"><br><br>
+
+<h3>Destinatario</h3>
+<input id="destinatario" placeholder="Nombre"><br>
+<input id="tel_dest" placeholder="Teléfono"><br>
+<input id="dir_dest" placeholder="Dirección"><br><br>
+
+<h3>Envío</h3>
+<input id="distancia" type="number" placeholder="Distancia (km)"><br>
+<select id="tipo">
+  <option>URGENTE</option>
+  <option>EXPRESS</option>
+  <option>NORMAL</option>
+</select><br><br>
+
+<textarea id="obs" placeholder="Observaciones"></textarea><br><br>
+
+<button onclick="guardar()">Guardar e imprimir</button>
+<button onclick="descargarCSV()">Descargar CSV</button>
+
+<script src="app.js"></script>
+
+</body>
+</html>
